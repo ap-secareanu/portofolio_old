@@ -4,6 +4,8 @@
 :root {
     --blue: #64ffda;
     --font_color: #ccd6f6;
+    --darker-font: #818aa3;
+    --backgrund: #121826;
     --poppins: 'Poppins', sans-serif;
     --source-pro: 'Source Code Pro', sans-serif;
     --border-radius: 5px;
@@ -17,9 +19,94 @@ html {
 }
 
 body {
-    background-color: #121826;
+    background-color: var(--backgrund);
     margin: 0;
     padding: 0;
+}
+
+.big_heading {
+    font-size: 72px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.transparent {
+    opacity: 0.6;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.container {
+    @media(min-width: 1400px) {
+        max-width: 1140px;
+    }
+}
+
+.move_negative {
+    top: -30px!important;
+    left: -30px!important;
+}
+
+.section_title {
+    font-size: 26px;
+    color: var(--font_color);
+    span {
+        font-size: 18px;
+        font-family: var(--source-pro);
+        color: var(--blue);
+    }
+    &::after {
+        width: 50%;
+        height: 1px;
+        content: "";
+        background-color: var(--font_color);
+        display: inline-block;
+        margin-left: 15px;
+        position: relative;
+        bottom: 5px;
+    }
+}
+
+.underline_animation {
+    &:before {
+        content: " ";
+        width: 0px;
+        height: 2px;
+        color: var(--blue);
+        background-color: var(--blue);
+        display: inline-block;
+        position: absolute;
+        bottom: -5px;
+        transition: var(--transition);
+    }
+    &:hover {
+        &:before {
+            width: 100%;
+        }
+    }
+}
+
+.button {
+    text-decoration: none;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: var(--border-radius);
+    padding: 5px 10px;
+    transition: var(--transition);
+    &:hover {
+        transform: translateX(-3px) translateY(-3px);
+        box-shadow: 3px 3px 0 0 var(--blue);
+    }
 }
 //Global Styles
 
@@ -28,6 +115,11 @@ body {
 #header {
     font-family: var(--source-pro);
     color: var(--font_color);
+    background-color: var(--backgrund);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
     .container {
         @media(min-width: 1600px) {
             max-width: calc(100% - 50px)
@@ -35,18 +127,6 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .resume_button {
-            text-decoration: none;
-            color: var(--blue);
-            border: 1px solid var(--blue);
-            border-radius: var(--border-radius);
-            padding: 5px 10px;
-            transition: var(--transition);
-            &:hover {
-                transform: translateX(-3px) translateY(-3px);
-                box-shadow: 3px 3px 0 0 var(--blue);
-            }
-        }
     }
     #nav {
         display: flex;
@@ -61,6 +141,7 @@ body {
                 a {
                     text-decoration: none;
                     transition: var(--transition);
+                    position: relative;
                     &:hover {
                         color: var(--blue);
                     }
@@ -68,6 +149,90 @@ body {
                     span {
                         color: var(--blue);
                     }
+                }
+            }
+        }
+    }
+}
+// Header and Nav styles
+
+
+// Introduction Section
+#intro {
+    .container {
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 22px;
+            font-family: var(--source-pro);
+            color: var(--blue);
+        }
+        h2 {
+            color: var(--font_color);
+            span {
+                color: var(--blue);
+                opacity: 1;
+            }
+            &:last-child {
+                color: var(--darker-font);
+            }
+        }
+        h3 {
+            color: var(--font_color);
+            .heading_dot {
+                color: var(--blue);
+            }
+        }
+        p {
+            font-size: 18px;
+            color: var(--font_color);
+            font-family: var(--poppins);
+            padding: 30px 0;
+            display: inline-block;
+            span {
+                color: var(--blue);
+            }
+        }
+        .button_container {
+            display: flex;
+            justify-content: flex-start;
+            .button {
+                padding: 20px 28px;
+            }
+        }
+    }
+}
+// Introduction Section
+
+
+// About Me Section
+#about {
+    .container {
+        max-width: 1000px;
+        .text-container {
+            p {
+                font-size: 18px;
+                color: var(--font_color);
+
+            }
+        }
+        .img_container {
+            padding-left: 50px;
+            .wrapper {
+                border: 3px solid var(--blue);
+                position: relative;
+                z-index: 2;
+                transition: var(--transition);
+                img {
+                    width: 100%;
+                    position: relative;
+                    top: -10px;
+                    left: -10px;
+                    transition: var(--transition);
                 }
             }
         }

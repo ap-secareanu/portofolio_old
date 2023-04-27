@@ -2,6 +2,8 @@
 :root {
   --blue: #64ffda;
   --font_color: #ccd6f6;
+  --darker-font: #818aa3;
+  --backgrund: #121826;
   --poppins: 'Poppins', sans-serif;
   --source-pro: 'Source Code Pro', sans-serif;
   --border-radius: 5px;
@@ -11,13 +13,83 @@ html {
   font-family: var(--poppins); }
 
 body {
-  background-color: #121826;
+  background-color: var(--backgrund);
   margin: 0;
   padding: 0; }
 
+.big_heading {
+  font-size: 72px;
+  margin: 0;
+  font-weight: 700; }
+
+.transparent {
+  opacity: 0.6; }
+
+.show {
+  opacity: 1; }
+
+.hide {
+  opacity: 0; }
+
+.width-full {
+  width: 100%; }
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1140px; } }
+
+.move_negative {
+  top: -30px !important;
+  left: -30px !important; }
+
+.section_title {
+  font-size: 26px;
+  color: var(--font_color); }
+  .section_title span {
+    font-size: 18px;
+    font-family: var(--source-pro);
+    color: var(--blue); }
+  .section_title::after {
+    width: 50%;
+    height: 1px;
+    content: "";
+    background-color: var(--font_color);
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    bottom: 5px; }
+
+.underline_animation:before {
+  content: " ";
+  width: 0px;
+  height: 2px;
+  color: var(--blue);
+  background-color: var(--blue);
+  display: inline-block;
+  position: absolute;
+  bottom: -5px;
+  transition: var(--transition); }
+.underline_animation:hover:before {
+  width: 100%; }
+
+.button {
+  text-decoration: none;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+  transition: var(--transition); }
+  .button:hover {
+    transform: translateX(-3px) translateY(-3px);
+    box-shadow: 3px 3px 0 0 var(--blue); }
+
 #header {
   font-family: var(--source-pro);
-  color: var(--font_color); }
+  color: var(--font_color);
+  background-color: var(--backgrund);
+  position: fixed;
+  width: 100%;
+  z-index: 999; }
   #header .container {
     display: flex;
     justify-content: space-between;
@@ -25,16 +97,6 @@ body {
     @media (min-width: 1600px) {
       #header .container {
         max-width: calc(100% - 50px); } }
-    #header .container .resume_button {
-      text-decoration: none;
-      color: var(--blue);
-      border: 1px solid var(--blue);
-      border-radius: var(--border-radius);
-      padding: 5px 10px;
-      transition: var(--transition); }
-      #header .container .resume_button:hover {
-        transform: translateX(-3px) translateY(-3px);
-        box-shadow: 3px 3px 0 0 var(--blue); }
   #header #nav {
     display: flex;
     justify-content: space-between;
@@ -48,10 +110,65 @@ body {
         #header #nav ul li a {
           text-decoration: none;
           transition: var(--transition);
+          position: relative;
           color: var(--font_color); }
           #header #nav ul li a:hover {
             color: var(--blue); }
           #header #nav ul li a span {
             color: var(--blue); }
+
+#intro .container {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #intro .container h1 {
+    font-size: 22px;
+    font-family: var(--source-pro);
+    color: var(--blue); }
+  #intro .container h2 {
+    color: var(--font_color); }
+    #intro .container h2 span {
+      color: var(--blue);
+      opacity: 1; }
+    #intro .container h2:last-child {
+      color: var(--darker-font); }
+  #intro .container h3 {
+    color: var(--font_color); }
+    #intro .container h3 .heading_dot {
+      color: var(--blue); }
+  #intro .container p {
+    font-size: 18px;
+    color: var(--font_color);
+    font-family: var(--poppins);
+    padding: 30px 0;
+    display: inline-block; }
+    #intro .container p span {
+      color: var(--blue); }
+  #intro .container .button_container {
+    display: flex;
+    justify-content: flex-start; }
+    #intro .container .button_container .button {
+      padding: 20px 28px; }
+
+#about .container {
+  max-width: 1000px; }
+  #about .container .text-container p {
+    font-size: 18px;
+    color: var(--font_color); }
+  #about .container .img_container {
+    padding-left: 50px; }
+    #about .container .img_container .wrapper {
+      border: 3px solid var(--blue);
+      position: relative;
+      z-index: 2;
+      transition: var(--transition); }
+      #about .container .img_container .wrapper img {
+        width: 100%;
+        position: relative;
+        top: -10px;
+        left: -10px;
+        transition: var(--transition); }
 
 /*# sourceMappingURL=index.css.map */
