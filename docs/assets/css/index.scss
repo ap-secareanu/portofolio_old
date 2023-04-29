@@ -127,6 +127,11 @@ body {
             width: 100%;
         }
     }
+    @media(max-width: 767px) {
+        &:before {
+            width: 0!important;
+        }
+    }
 }
 
 .button {
