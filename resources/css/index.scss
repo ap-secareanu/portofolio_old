@@ -16,18 +16,41 @@
 //Global Styles
 html {
     font-family: var(--poppins);
+    width: 100%;
 }
 
 body {
     background-color: var(--backgrund);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+#about, #exp, #edu, #contact {
+    padding: 100px 0;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    transition: 1s!important;
+    @media(max-width: 767px) {
+        padding: 40px 0;
+    }
+}
+
+.main {
+    position: relative;
 }
 
 .big_heading {
     font-size: 72px;
     margin: 0;
     font-weight: 700;
+    @media(max-width: 991px) {
+        font-size: 52px;
+    }
+    @media(max-width: 500px) {
+        font-size: 34px;
+    }
 }
 
 .transparent {
@@ -35,11 +58,16 @@ body {
 }
 
 .show {
-    opacity: 1;
+    opacity: 1!important;
+    visibility: visible!important;
 }
 
 .hide {
-    opacity: 0;
+    opacity: 0!important;
+}
+
+.come {
+    right: 0!important;
 }
 
 .width-full {
@@ -47,8 +75,14 @@ body {
 }
 
 .container {
+    padding: 0 30px;
     @media(min-width: 1400px) {
         max-width: 1140px;
+    }
+    @media(max-width: 767px) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 15px;
     }
 }
 
@@ -70,6 +104,9 @@ body {
         margin-left: 15px;
         position: relative;
         bottom: 5px;
+        @media(max-width: 767px) {
+            width: 50%;
+        }
     }
 }
 
@@ -99,10 +136,30 @@ body {
     border-radius: var(--border-radius);
     padding: 5px 10px;
     transition: var(--transition);
+    font-family: var(--source-pro);
     &:hover {
         transform: translateX(-3px) translateY(-3px);
         box-shadow: 3px 3px 0 0 var(--red);
     }
+}
+
+.big_btn {
+    padding: 20px 28px;
+    @media(max-width: 400px) {
+        padding: 10px 18px;
+    }
+}
+
+.overlay {
+    content: '';
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 //Global Styles
 
@@ -120,6 +177,9 @@ body {
         @media(min-width: 1600px) {
             max-width: calc(100% - 50px)
         }
+        @media(max-width: 991px) {
+            max-width: calc(100% - 50px);
+        }
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -128,6 +188,9 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media(max-width: 991px) {
+            display: none;
+        }
         ul {
             margin: 0;
             padding: 30px 0;
@@ -138,6 +201,66 @@ body {
                     text-decoration: none;
                     transition: var(--transition);
                     position: relative;
+                    &:hover {
+                        color: var(--red);
+                    }
+                    color: var(--font_color);
+                    span {
+                        color: var(--red);
+                    }
+                }
+            }
+        }
+    }
+    .hamburger {
+        display: none;
+        z-index: 999;
+        .hamburger-inner {
+            background-color: var(--red);
+            &::after {
+                background-color: var(--red);
+            }
+            &::before {
+                background-color: var(--red);
+            }
+        }
+        @media(max-width: 991px) {
+            display: block;
+        }
+    }
+    #nav_mobile {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        background-color: #121826e3;
+        transition: var(--transition);
+        @media(min-width: 992px) {
+            display: none;
+        }
+        ul {
+            margin: 0;
+            padding: 30px 0;
+            .button_container {
+                margin-top: 30px;
+                .button {
+                    font-size: 18px;
+                    padding: 10px 18px;
+                }
+            }
+            li {
+                display:block;
+                padding: 20px 0;
+                a {
+                    text-decoration: none;
+                    transition: var(--transition);
+                    position: relative;
+                    font-size: 18px;
                     &:hover {
                         color: var(--red);
                     }
@@ -196,9 +319,6 @@ body {
         .button_container {
             display: flex;
             justify-content: flex-start;
-            .button {
-                padding: 20px 28px;
-            }
         }
     }
 }
@@ -207,7 +327,6 @@ body {
 
 // About Me Section
 #about {
-    padding: 100px 0;
     .container {
         max-width: 1000px;
         .text-container {
@@ -241,6 +360,10 @@ body {
         .img_container {
             padding-left: 50px;
             padding-top: 10px;
+            @media(max-width: 767px) {
+                width: 60%;
+                margin: 50px auto 0;
+            }
             .wrapper {
                 border: 3px solid var(--red);
                 position: relative;
@@ -266,7 +389,6 @@ body {
 
 // Work experience
 #exp {
-    padding: 100px 0;
     .container {
         max-width: 1000px;
         .job {
@@ -306,6 +428,10 @@ body {
                 list-style: none;
                 width: 90%;
                 font-size: 16px;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    padding-left: 30px;
+                }
                 li {
                     display: flex;
                     &:last-child {
@@ -328,7 +454,6 @@ body {
 
 // Education Section
 #edu {
-    padding: 100px 0;
     .container {
         max-width: 1000px;
         .education {
@@ -382,6 +507,10 @@ body {
                 list-style: none;
                 width: 90%;
                 font-size: 16px;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    padding-left: 30px;
+                }
                 li {
                     display: flex;
                     a {
@@ -403,4 +532,120 @@ body {
             }
         }
     }
+}
+// Education Section
+
+
+// Contact Section
+#contact {
+    text-align: center;
+    .container {
+        max-width: 1000px;
+        h2 {
+            color: var(--red);
+            font-size: 22px;
+            font-family: var(--source-pro);
+        }
+        h3 {
+            color: var(--darker-font);
+        }
+        p {
+            color: var(--font_color);
+            font-family: var(--poppins);
+            font-size: 16px;
+            padding: 20px 0;
+            width: 85%;
+            display: inline-block;
+        }
+        .button_container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+// Contact Section
+
+
+// Social Icons
+.social {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 200px;
+    align-items: center;
+    @media(max-width: 1680px) {
+        left: 100px;
+    }
+    @media(max-width: 1400px) {
+        left: 50px;
+    }
+    @media(max-width: 1300px) {
+        display: none;
+    }
+    &::after {
+        content: '';
+        width: 1px;
+        background-color: var(--darker-font);
+        height: 150px;
+        position: relative;
+        display: inline-block;
+    }
+
+    i {
+        font-size: 26px;
+        color: var(--darker-font);
+        padding: 10px 0;
+        transition: var(--transition);
+        &:hover {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            color: var(--red);
+        }
+    }
+}
+// Social Icons
+
+
+// Footer
+#footer {
+    padding: 50px 0;
+    .container {
+        max-width: 1000px;
+        .social_footer {
+            padding-bottom: 20px;
+            justify-content: center;
+            display: none;
+            @media(max-width: 1300px) {
+                display: flex;
+            }
+            i {
+                font-size: 26px;
+                color: var(--darker-font);
+                padding: 0 15px;
+                transition: var(--transition);
+                &:hover {
+                    padding-top: 5px;
+                    padding-bottom: 15px;
+                    color: var(--red);
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+            p {
+                font-size: 12px;
+                font-family: var(--source-pro);
+                text-align: center; 
+                color: var(--darker-font);
+                transition: var(--transition);
+            }
+            &:hover {
+                p {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+  
 }
