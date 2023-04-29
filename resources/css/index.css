@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Code+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 :root {
-  --blue: #64ffda;
+  --red: #e53f71;
   --font_color: #ccd6f6;
   --darker-font: #818aa3;
   --backgrund: #121826;
@@ -38,22 +38,18 @@ body {
   .container {
     max-width: 1140px; } }
 
-.move_negative {
-  top: -30px !important;
-  left: -30px !important; }
-
 .section_title {
   font-size: 26px;
   color: var(--font_color); }
   .section_title span {
     font-size: 18px;
     font-family: var(--source-pro);
-    color: var(--blue); }
+    color: var(--red); }
   .section_title::after {
     width: 50%;
     height: 1px;
     content: "";
-    background-color: var(--font_color);
+    background-color: var(--red);
     display: inline-block;
     margin-left: 15px;
     position: relative;
@@ -63,8 +59,8 @@ body {
   content: " ";
   width: 0px;
   height: 2px;
-  color: var(--blue);
-  background-color: var(--blue);
+  color: var(--red);
+  background-color: var(--red);
   display: inline-block;
   position: absolute;
   bottom: -5px;
@@ -74,14 +70,14 @@ body {
 
 .button {
   text-decoration: none;
-  color: var(--blue);
-  border: 1px solid var(--blue);
+  color: var(--red);
+  border: 1px solid var(--red);
   border-radius: var(--border-radius);
   padding: 5px 10px;
   transition: var(--transition); }
   .button:hover {
     transform: translateX(-3px) translateY(-3px);
-    box-shadow: 3px 3px 0 0 var(--blue); }
+    box-shadow: 3px 3px 0 0 var(--red); }
 
 #header {
   font-family: var(--source-pro);
@@ -113,9 +109,9 @@ body {
           position: relative;
           color: var(--font_color); }
           #header #nav ul li a:hover {
-            color: var(--blue); }
+            color: var(--red); }
           #header #nav ul li a span {
-            color: var(--blue); }
+            color: var(--red); }
 
 #intro .container {
   min-height: 100vh;
@@ -126,18 +122,18 @@ body {
   #intro .container h1 {
     font-size: 22px;
     font-family: var(--source-pro);
-    color: var(--blue); }
+    color: var(--red); }
   #intro .container h2 {
     color: var(--font_color); }
     #intro .container h2 span {
-      color: var(--blue);
+      color: var(--red);
       opacity: 1; }
     #intro .container h2:last-child {
       color: var(--darker-font); }
   #intro .container h3 {
-    color: var(--font_color); }
+    color: var(--darker-font); }
     #intro .container h3 .heading_dot {
-      color: var(--blue); }
+      color: var(--red); }
   #intro .container p {
     font-size: 18px;
     color: var(--font_color);
@@ -145,7 +141,7 @@ body {
     padding: 30px 0;
     display: inline-block; }
     #intro .container p span {
-      color: var(--blue); }
+      color: var(--red); }
   #intro .container .button_container {
     display: flex;
     justify-content: flex-start; }
@@ -156,11 +152,28 @@ body {
   max-width: 1000px; }
   #about .container .text-container p {
     font-size: 18px;
-    color: var(--font_color); }
+    color: var(--font_color);
+    font-family: var(--poppins);
+    display: inline-block; }
+  #about .container .text-container .tech_stack table {
+    width: 100%; }
+    #about .container .text-container .tech_stack table td {
+      width: 33%; }
+      #about .container .text-container .tech_stack table td .fa-play {
+        font-size: 8px;
+        vertical-align: middle;
+        color: var(--red);
+        padding-right: 10px; }
+      #about .container .text-container .tech_stack table td p {
+        margin: 0;
+        font-family: var(--source-pro);
+        color: var(--darker-font);
+        font-size: 14px; }
   #about .container .img_container {
-    padding-left: 50px; }
+    padding-left: 50px;
+    padding-top: 10px; }
     #about .container .img_container .wrapper {
-      border: 3px solid var(--blue);
+      border: 3px solid var(--red);
       position: relative;
       z-index: 2;
       transition: var(--transition); }
@@ -170,5 +183,8 @@ body {
         top: -10px;
         left: -10px;
         transition: var(--transition); }
+        #about .container .img_container .wrapper img:hover {
+          top: -20px;
+          left: -20px; }
 
 /*# sourceMappingURL=index.css.map */

@@ -15,13 +15,6 @@ $(document).ready(function() {
     // Heading Dot animation
 
 
-    // About Section animations
-
-    $('.img_container').hover(function() {
-        $('.img_container .profile_pic').addClass('move_negative');
-    }, function() {
-        $('.img_container .profile_pic').removeClass('move_negative');
-    })
 
 
 })
