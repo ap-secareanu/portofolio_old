@@ -13,33 +13,43 @@ $(document).ready(function() {
             $('#about').addClass('show');
         } else if (currentPos >= 1000 && screenHeight >= 1000) {
             $('#about').addClass('show');
+        } else if (currentPos >= 600 && screenHeight <= 700) {
+            $('#about').addClass('show');
         } else {
             $('#about').removeClass('show');
         }
 
-        if(currentPos >= 962 && screenHeight <= 1000) {
+        if(currentPos >= 962 && (screenHeight <= 1000 && screenHeight >= 700)) {
             $('#exp').addClass('show');
         } else if (currentPos >= 1322 && screenHeight >= 1000) {
+            $('#exp').addClass('show');
+        } else if (currentPos >= 1300 && screenHeight <= 700) {
             $('#exp').addClass('show');
         } else {
             $('#exp').removeClass('show');
         }
 
-        if(currentPos >= 2300 && screenHeight <= 1000) {
+        if(currentPos >= 2300 && (screenHeight <= 1000 && screenHeight >= 700)) {
             $('#edu').addClass('show');
         } else if (currentPos >= 2500 && screenHeight >= 1000) {
+            $('#edu').addClass('show');
+        } else if (currentPos >= 3000 && screenHeight <= 700) {
             $('#edu').addClass('show');
         } else {
             $('#edu').removeClass('show');
         }
 
-        if(currentPos >= 3040 && screenHeight <= 1000) {
+        if(currentPos >= 3040 && (screenHeight <= 1000 && screenHeight >= 700)) {
             $('#contact').addClass('show');
         } else if (currentPos >= 3140 && screenHeight >= 1000) {
             $('#contact').addClass('show');
-        } else {
+        } else if (currentPos >= 4300 && screenHeight <= 700) {
+            $('#contact').addClass('show');
+        }else {
             $('#contact').removeClass('show');
         }
+
+        console.log(currentPos, screenHeight)
 
 
     })
