@@ -61,7 +61,7 @@ $(document).ready(function() {
             $('.overlay').css('display', 'inline-block')
         }
     })
-    // Mobile menu
+    
     $('#nav_mobile a').click(function() {
         if($('.hamburger').hasClass('is-active')) {
             $('.hamburger').removeClass('is-active');
@@ -75,6 +75,7 @@ $(document).ready(function() {
             $('.overlay').css('display', 'inline-block')
         }
     })
+    // Mobile menu
     
 
     // Heading Dot animation
