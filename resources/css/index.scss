@@ -53,15 +53,16 @@ body {
 }
 
 .section_title {
-    font-size: 26px;
+    font-size: 32px;
     color: var(--font_color);
+    padding-bottom: 40px;
     span {
         font-size: 18px;
         font-family: var(--source-pro);
         color: var(--red);
     }
     &::after {
-        width: 50%;
+        width: 500px;
         height: 1px;
         content: "";
         background-color: var(--red);
@@ -76,12 +77,12 @@ body {
     &:before {
         content: " ";
         width: 0px;
-        height: 2px;
+        height: 1px;
         color: var(--red);
         background-color: var(--red);
         display: inline-block;
         position: absolute;
-        bottom: -5px;
+        bottom: -2px;
         transition: var(--transition);
     }
     &:hover {
@@ -183,7 +184,7 @@ body {
             }
         }
         p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--font_color);
             font-family: var(--poppins);
             padding: 30px 0;
@@ -206,11 +207,12 @@ body {
 
 // About Me Section
 #about {
+    padding: 100px 0;
     .container {
         max-width: 1000px;
         .text-container {
             p {
-                font-size: 18px;
+                font-size: 16px;
                 color: var(--font_color);
                 font-family: var(--poppins);
                 display: inline-block;
@@ -253,6 +255,65 @@ body {
                     &:hover {
                         top: -20px;
                         left: -20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// About Me Section
+
+
+// Work experience
+#exp {
+    padding: 100px 0;
+    .container {
+        max-width: 1000px;
+        .job {
+            padding-bottom: 50px;
+            .job_title {
+                font-size: 22px;
+                color: var(--font_color);
+                font-family: var(--poppins);
+                span {
+                    color: var(--red);
+                    a {
+                        text-decoration: none;
+                        color: var(--red);
+                        position: relative;
+                    }
+                }
+                .fa-play {
+                    color: var(--red);
+                    padding: 0 20px;
+                    font-size: 14px;
+                    vertical-align: middle;
+                }
+            }
+            .job_period {
+                font-size: 14px;
+                font-family: var(--source-pro);
+                color: var(--darker-font);
+                padding: 0 0 10px 50px;
+            }
+            .job_details {
+                padding-left: 50px;
+                font-family: var(--poppins);
+                color: var(--font_color);
+                list-style: none;
+                width: 90%;
+                font-size: 16px;
+                li {
+                    display: flex;
+                    &:last-child {
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .fa-play {
+                        color: var(--red);
+                        font-size: 10px;
+                        padding: 5px 10px;
                     }
                 }
             }

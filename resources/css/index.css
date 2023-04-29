@@ -39,14 +39,15 @@ body {
     max-width: 1140px; } }
 
 .section_title {
-  font-size: 26px;
-  color: var(--font_color); }
+  font-size: 32px;
+  color: var(--font_color);
+  padding-bottom: 40px; }
   .section_title span {
     font-size: 18px;
     font-family: var(--source-pro);
     color: var(--red); }
   .section_title::after {
-    width: 50%;
+    width: 500px;
     height: 1px;
     content: "";
     background-color: var(--red);
@@ -58,12 +59,12 @@ body {
 .underline_animation:before {
   content: " ";
   width: 0px;
-  height: 2px;
+  height: 1px;
   color: var(--red);
   background-color: var(--red);
   display: inline-block;
   position: absolute;
-  bottom: -5px;
+  bottom: -2px;
   transition: var(--transition); }
 .underline_animation:hover:before {
   width: 100%; }
@@ -135,7 +136,7 @@ body {
     #intro .container h3 .heading_dot {
       color: var(--red); }
   #intro .container p {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--font_color);
     font-family: var(--poppins);
     padding: 30px 0;
@@ -148,43 +149,87 @@ body {
     #intro .container .button_container .button {
       padding: 20px 28px; }
 
-#about .container {
-  max-width: 1000px; }
-  #about .container .text-container p {
-    font-size: 18px;
-    color: var(--font_color);
-    font-family: var(--poppins);
-    display: inline-block; }
-  #about .container .text-container .tech_stack table {
-    width: 100%; }
-    #about .container .text-container .tech_stack table td {
-      width: 33%; }
-      #about .container .text-container .tech_stack table td .fa-play {
-        font-size: 8px;
-        vertical-align: middle;
-        color: var(--red);
-        padding-right: 10px; }
-      #about .container .text-container .tech_stack table td p {
-        margin: 0;
+#about {
+  padding: 100px 0; }
+  #about .container {
+    max-width: 1000px; }
+    #about .container .text-container p {
+      font-size: 16px;
+      color: var(--font_color);
+      font-family: var(--poppins);
+      display: inline-block; }
+    #about .container .text-container .tech_stack table {
+      width: 100%; }
+      #about .container .text-container .tech_stack table td {
+        width: 33%; }
+        #about .container .text-container .tech_stack table td .fa-play {
+          font-size: 8px;
+          vertical-align: middle;
+          color: var(--red);
+          padding-right: 10px; }
+        #about .container .text-container .tech_stack table td p {
+          margin: 0;
+          font-family: var(--source-pro);
+          color: var(--darker-font);
+          font-size: 14px; }
+    #about .container .img_container {
+      padding-left: 50px;
+      padding-top: 10px; }
+      #about .container .img_container .wrapper {
+        border: 3px solid var(--red);
+        position: relative;
+        z-index: 2;
+        transition: var(--transition); }
+        #about .container .img_container .wrapper img {
+          width: 100%;
+          position: relative;
+          top: -10px;
+          left: -10px;
+          transition: var(--transition); }
+          #about .container .img_container .wrapper img:hover {
+            top: -20px;
+            left: -20px; }
+
+#exp {
+  padding: 100px 0; }
+  #exp .container {
+    max-width: 1000px; }
+    #exp .container .job {
+      padding-bottom: 50px; }
+      #exp .container .job .job_title {
+        font-size: 22px;
+        color: var(--font_color);
+        font-family: var(--poppins); }
+        #exp .container .job .job_title span {
+          color: var(--red); }
+          #exp .container .job .job_title span a {
+            text-decoration: none;
+            color: var(--red);
+            position: relative; }
+        #exp .container .job .job_title .fa-play {
+          color: var(--red);
+          padding: 0 20px;
+          font-size: 14px;
+          vertical-align: middle; }
+      #exp .container .job .job_period {
+        font-size: 14px;
         font-family: var(--source-pro);
         color: var(--darker-font);
-        font-size: 14px; }
-  #about .container .img_container {
-    padding-left: 50px;
-    padding-top: 10px; }
-    #about .container .img_container .wrapper {
-      border: 3px solid var(--red);
-      position: relative;
-      z-index: 2;
-      transition: var(--transition); }
-      #about .container .img_container .wrapper img {
-        width: 100%;
-        position: relative;
-        top: -10px;
-        left: -10px;
-        transition: var(--transition); }
-        #about .container .img_container .wrapper img:hover {
-          top: -20px;
-          left: -20px; }
+        padding: 0 0 10px 50px; }
+      #exp .container .job .job_details {
+        padding-left: 50px;
+        font-family: var(--poppins);
+        color: var(--font_color);
+        list-style: none;
+        width: 90%;
+        font-size: 16px; }
+        #exp .container .job .job_details li {
+          display: flex; }
+          #exp .container .job .job_details li:last-child p {
+            margin-bottom: 0; }
+          #exp .container .job .job_details li .fa-play {
+            color: var(--red);
+            font-size: 10px;
+            padding: 5px 10px; }
 
 /*# sourceMappingURL=index.css.map */
