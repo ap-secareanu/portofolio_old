@@ -196,6 +196,8 @@ body {
     max-width: 1000px; }
     #exp .container .job {
       padding-bottom: 50px; }
+      #exp .container .job:last-child {
+        padding-bottom: 0; }
       #exp .container .job .job_title {
         font-size: 22px;
         color: var(--font_color);
@@ -228,6 +230,66 @@ body {
           #exp .container .job .job_details li:last-child p {
             margin-bottom: 0; }
           #exp .container .job .job_details li .fa-play {
+            color: var(--red);
+            font-size: 10px;
+            padding: 5px 10px; }
+
+#edu {
+  padding: 100px 0; }
+  #edu .container {
+    max-width: 1000px; }
+    #edu .container .education {
+      padding-bottom: 50px; }
+      #edu .container .education .institution {
+        font-size: 22px;
+        color: var(--font_color);
+        font-family: var(--poppins); }
+        #edu .container .education .institution span {
+          color: var(--red); }
+          #edu .container .education .institution span a {
+            text-decoration: none;
+            color: var(--red);
+            position: relative; }
+        #edu .container .education .institution .fa-play {
+          color: var(--red);
+          padding: 0 20px;
+          font-size: 14px;
+          vertical-align: middle; }
+        #edu .container .education .institution_certificates {
+          display: inline-block;
+          padding-bottom: 26px; }
+          #edu .container .education .institution_certificates span {
+            color: var(--font_color);
+            position: relative; }
+            #edu .container .education .institution_certificates span::before {
+              width: 100%;
+              content: "";
+              height: 1px;
+              background-color: var(--red);
+              position: absolute;
+              display: inline-block;
+              bottom: 0; }
+      #edu .container .education .period {
+        font-size: 14px;
+        font-family: var(--source-pro);
+        color: var(--darker-font);
+        padding: 0 0 10px 50px; }
+      #edu .container .education .details {
+        padding-left: 50px;
+        font-family: var(--poppins);
+        color: var(--font_color);
+        list-style: none;
+        width: 90%;
+        font-size: 16px; }
+        #edu .container .education .details li {
+          display: flex; }
+          #edu .container .education .details li a {
+            position: relative;
+            color: var(--red);
+            text-decoration: none; }
+          #edu .container .education .details li:last-child p, #edu .container .education .details li:last-child a {
+            margin-bottom: 0; }
+          #edu .container .education .details li .fa-play {
             color: var(--red);
             font-size: 10px;
             padding: 5px 10px; }

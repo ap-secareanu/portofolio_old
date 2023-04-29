@@ -271,6 +271,9 @@ body {
         max-width: 1000px;
         .job {
             padding-bottom: 50px;
+            &:last-child {
+                padding-bottom: 0;
+            }
             .job_title {
                 font-size: 22px;
                 color: var(--font_color);
@@ -307,6 +310,87 @@ body {
                     display: flex;
                     &:last-child {
                         p {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .fa-play {
+                        color: var(--red);
+                        font-size: 10px;
+                        padding: 5px 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+// Experience Section
+
+
+// Education Section
+#edu {
+    padding: 100px 0;
+    .container {
+        max-width: 1000px;
+        .education {
+            padding-bottom: 50px;
+            .institution {
+                font-size: 22px;
+                color: var(--font_color);
+                font-family: var(--poppins);
+                span {
+                    color: var(--red);
+                    a {
+                        text-decoration: none;
+                        color: var(--red);
+                        position: relative;
+                    }
+                }
+                .fa-play {
+                    color: var(--red);
+                    padding: 0 20px;
+                    font-size: 14px;
+                    vertical-align: middle;
+                }
+                &_certificates {
+                    display: inline-block;
+                    padding-bottom: 26px;
+                    span {
+                        color: var(--font_color);
+                        position: relative;
+                        &::before {
+                            width: 100%;
+                            content: "";
+                            height: 1px;
+                            background-color: var(--red);
+                            position: absolute;
+                            display: inline-block;
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+            .period {
+                font-size: 14px;
+                font-family: var(--source-pro);
+                color: var(--darker-font);
+                padding: 0 0 10px 50px;
+            }
+            .details {
+                padding-left: 50px;
+                font-family: var(--poppins);
+                color: var(--font_color);
+                list-style: none;
+                width: 90%;
+                font-size: 16px;
+                li {
+                    display: flex;
+                    a {
+                        position: relative;
+                        color: var(--red);
+                        text-decoration: none;
+                    }
+                    &:last-child {
+                        p, a {
                             margin-bottom: 0;
                         }
                     }
